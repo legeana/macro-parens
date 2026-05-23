@@ -51,7 +51,7 @@ $ cargo run
 ```
 
 Rust-analyzer unexpectedly produces the first `Group` token with a `Parenthesis`
-delimiter:
+delimiter, `Unexpected Group/Parenthesis`:
 
 ```sh
 rust-analyzer diagnostics .
