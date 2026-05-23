@@ -1,0 +1,8 @@
+[package]
+name = "macro-bin"
+
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+macro-lib-derive = { path = "../macro-lib-derive" }
