@@ -8,12 +8,14 @@ pub fn my_macro_impl(input: proc_macro::TokenStream) -> proc_macro::TokenStream 
     let token = input.clone().into_iter().next().unwrap();
     match token {
         TokenTree::Group(g) => match g.delimiter() {
-            // Rust Analyzer produces Groups with Parenthesis delimiter for macro_rules arguments.
+            // Rust Analyzer produces Groups with Parenthesis delimiter for
+            // macro_rules arguments.
             Delimiter::Parenthesis => quote! {
                 compile_error!("Unexpected Group/Parenthesis")
             }
             .into(),
-            // Rustc produces Groups with None delimiter for macro_rules arguments.
+            // Rustc produces Groups with None delimiter for macro_rules
+            // arguments.
             Delimiter::None => input,
             _ => unreachable!(),
         },
